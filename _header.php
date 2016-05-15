@@ -1,5 +1,4 @@
 <?php
-	include("session.php");
     session_start();
 	//this is doe checking for login stuff 
    /*function checkAuth($doRedirect) {

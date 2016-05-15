@@ -1,12 +1,14 @@
 <?php
-
-   include("_header.php");
-   include("Config.php");
-   session_start();
+	include("Config.php");
+	include("_header.php");
+	session_start();
+	
+   
+  
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-      
+      $error = "";
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
@@ -22,11 +24,12 @@
       if($count == 1) {
          session_register("myusername");
          $_SESSION['login_user'] = $myusername;
+		 
          
-         echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
       }else {
          $error = "Your Login Name or Password is invalid";
       }
+	  header("Location: landing.php");
    }
 ?>
 <html>
@@ -63,10 +66,10 @@
                
                <form action = "" method = "post">
                   <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
-                  <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
+                  <label>Password  :</label><input type = "text" name = "password" class = "box" /><br/><br />
                   <input type = "submit" value = " Submit "/><br />
                </form>
-               
+			   
                <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 					
             </div>
