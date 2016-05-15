@@ -2,7 +2,7 @@
 
 <?php
 	include("_header.php");
-	include("checklogin.php");
+	//include("checklogin.php");
 
 ?>
 
@@ -20,7 +20,6 @@
 			
 			User Name:<br>
 			<input type="text" name="username"><br>
-			<script> isValid($firstName, $nameRegEx) </script>
 			Password:<br>
 			<input type="text" name="password"><br>
 

@@ -1,5 +1,5 @@
 <?php
-	include('config.php');
+	include('Config.php');
 	
 	$query = "INSERT INTO login_T(id, username, password) Values(?,?,?)";
 	
