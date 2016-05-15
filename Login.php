@@ -23,7 +23,7 @@
          session_register("myusername");
          $_SESSION['login_user'] = $myusername;
          
-         header("location: landing.php");
+         echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
       }else {
          $error = "Your Login Name or Password is invalid";
       }

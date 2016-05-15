@@ -12,7 +12,7 @@
 		$statement->bind_param('iss', $userId, $username, $password);
 		$statement->execute();
 		$statement->close();
-		header("Location: landing.php");
+		echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
 	}
 	else{
 		printf("Error: %s\n", $db->error);
