@@ -1,6 +1,6 @@
 <?php
     session_start();
-	
+	//this is doe checking for login stuff 
     function checkAuth($doRedirect) {
 	if (isset($_SESSION["onidid"]) && $_SESSION["onidid"] != "") return $_SESSION["onidid"];
 
