@@ -1,7 +1,8 @@
 <?php
+	include("session.php");
     session_start();
 	//this is doe checking for login stuff 
-    function checkAuth($doRedirect) {
+   /*function checkAuth($doRedirect) {
 	if (isset($_SESSION["onidid"]) && $_SESSION["onidid"] != "") return $_SESSION["onidid"];
 
 	 $pageURL = 'http';
@@ -31,7 +32,7 @@
 		echo "<script>location.replace('" . $url . "');</script>";
 	} 
 	return "";
-}
+}*/
 
     
 ?>
@@ -40,22 +41,24 @@
 <head>
 	<meta charset = "utf-8">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
-	<title> Hom-E </title>
-	<link href = "css/style.css" rel = "stylesheet">
-	<link href = "images/logo.ico" rel = "shortcut icon">
+	<title> Horse </title>
+	<!-- <link href = "css/style.css" rel = "stylesheet">
+	<link href = "images/logo.ico" rel = "shortcut icon"> -->
 </head>
 
 <body>
-<div id = "wrapper">
+
 	<!-- TOPBAR ==================================================================================-->
-	<div id = "topbar">
+	<!-- <div id = "topbar">
 		<a href = "dashboard.php"><img src = "images/logo.png"></a>
-	</div>
+	</div> -->
 	<!-- MAIN NAV ================================================================================-->
 	<nav>
 		<ul>
-			<li><a href = "Looking4House.php"> Find House </a></li>
-			<li><a href = "offeringHousing.php"> Post House </a></li>
+			<li><a href = "landing.php"> Landing </a></li>
+			<li><a href = "Login.php"> Login </a></li>
+			<li><a href = "sighUp.php"> Sign Up</a></li>
+			
 			<!--
 			<li>
 				<a href = "ViewProfile.php" id = 'dropDownTop'> Account </a>
@@ -68,7 +71,6 @@
 		</ul>
 	</nav>
 	
-	<div class = "clearfix"></div>
 	<hr>
 	
 </html>
