@@ -32,7 +32,6 @@
 		if (isset($_POST['submit']) and $error == '') {
 			// Include the 'addUser' code
 			include 'addUser.php';
-			echo '<meta http-equiv="refresh" content="0; url=Login.php" />';
 		}
 	?>
 	
