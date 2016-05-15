@@ -57,7 +57,7 @@
 		<ul>
 			<li><a href = "landing.php"> Landing </a></li>
 			<li><a href = "Login.php"> Login </a></li>
-			<li><a href = "sighUp.php"> Sign Up</a></li>
+			<li><a href = "signUp.php"> Sign Up</a></li>
 			
 			<!--
 			<li>
