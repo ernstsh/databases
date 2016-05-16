@@ -53,10 +53,11 @@
 	</div> -->
 	<!-- MAIN NAV ================================================================================-->
 	<nav>
-		<ul>
-			<li><a href = "landing.php"> Landing </a></li>
-			<li><a href = "Login.php"> Login </a></li>
-			<li><a href = "signUp.php"> Sign Up</a></li>
+			<a style ="padding-left: 3rem; color: #3b1261"  href = "landing.php"> Landing </a>
+			<a style ="padding-left: 3rem; color: #3b1261"  href = "Login.php"> Login </a>
+			<a style ="padding-left: 3rem; color: #3b1261"  href = "signUp.php"> Sign Up</a>
+			<a style ="padding-left: 3rem; color: #3b1261"  href = "Logout.php"> Logout </a>
+			
 			
 			<!--
 			<li>
@@ -67,7 +68,6 @@
 				</ul>
 			</li>
 			-->
-		</ul>
 	</nav>
 	
 	<hr>

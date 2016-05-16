@@ -1,12 +1,9 @@
 <?php
+	session_start();
 	include("Config.php");
 	include("_header.php");
-	session_start();
 	
-   
-  
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       $error = "";
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
@@ -18,18 +15,20 @@
       $active = $row['active'];
       
       $count = mysqli_num_rows($result);
-      
+      //echo $count;
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
 		 
-         
+         //session_register("myusername");
+		 $_SESSION['login_user'] = $myusername;
+		 echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
+		 //header("Location: landing.php");
+
       }else {
          $error = "Your Login Name or Password is invalid";
       }
-	  header("Location: landing.php");
+	  
    }
 ?>
 <html>

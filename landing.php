@@ -9,8 +9,8 @@
    </head>
    
    <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
-      <h2><a href = "Logout.php">Sign Out</a></h2>
+      <h1>Welcome <?php echo $login_session; ?></h1>
+	  <p> Today has been rough... -Jia </P>
    </body>
    
 </html>
