@@ -10,6 +10,7 @@
 	$query = "INSERT INTO horse_T(hid,name,breed,reg,gender,age,height,owner) Values(?,?,?,?,?,?,?,?)";
 	
 	if($statement = $finalDB->prepare($query)){
+		//$tid = $_SESSION['user_check'];
 		$hid = uniqid();
 		$name = $_REQUEST['name'];
 		$breed = $_REQUEST['breed'];
