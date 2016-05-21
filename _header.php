@@ -41,22 +41,22 @@
 	<meta charset = "utf-8">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
 	<title> Horse </title>
-	<!-- <link href = "css/style.css" rel = "stylesheet">
-	<link href = "images/logo.ico" rel = "shortcut icon"> -->
+	<link href = "css/style.css" rel = "stylesheet">
+	<link href = "images/logo.ico" rel = "shortcut icon">
 </head>
 
 <body>
 
 	<!-- TOPBAR ==================================================================================-->
-	<!-- <div id = "topbar">
-		<a href = "dashboard.php"><img src = "images/logo.png"></a>
-	</div> -->
+	<div id = "topbar">
+		<a href = "landing.php"><img src = "images/logo.png" width="120" height="120" ></a>
+	</div>
 	<!-- MAIN NAV ================================================================================-->
 	<nav>
-			<a style ="padding-left: 3rem; color: #3b1261"  href = "landing.php"> Landing </a>
-			<a style ="padding-left: 3rem; color: #3b1261"  href = "Login.php"> Login </a>
-			<a style ="padding-left: 3rem; color: #3b1261"  href = "signUp.php"> Sign Up</a>
-			<a style ="padding-left: 3rem; color: #3b1261"  href = "Logout.php"> Logout </a>
+			<a href = "landing.php"> Landing </a>
+			<a href = "Login.php"> Login </a>
+			<a href = "signUp.php"> Sign Up</a>
+			<a href = "Logout.php"> Logout </a>
 			
 			
 			<!--
@@ -70,6 +70,6 @@
 			-->
 	</nav>
 	
-	<hr>
+	<!-- <hr> -->
 	
 </html>

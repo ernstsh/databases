@@ -1,0 +1,390 @@
+/* ------------------------------- COLOR REFERENCE --------------------------------
+
+main background		dark grey		#202020
+off background		med. grey		#303030
+main text			white			#ffffff
+off text			light grey		#909090
+highlight 1			med. blue		#3399ff
+*/
+/* ---------------------------------- SECTIONS --------------------------------- */
+
+body
+{
+	position: relative;
+	margin: 0 0 60px 0;
+	font-family: 'Verdana', Geneva, Sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	overflow: auto;
+	background: #4169E1;
+}
+
+#wrapper
+{
+	margin: 0 auto;
+	max-width: 940px;
+	width: 96%;
+	height: 100%;
+}
+
+#topbar
+{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+/* this was intended for the log in button but it didn't works, so I brute forced it*/
+#logsign
+{
+	color: #000000;
+	
+}
+
+/* ------------- NAV ------------- */
+nav > a
+{
+	font-size: 18px;
+	color: #FFFFFF;
+	padding-left: 3rem;
+}
+nav > ul
+{
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 100px;
+}
+
+nav > ul > li
+{
+	float: left;
+	height: 100%;
+	padding-left: 5px;
+}
+
+nav > ul > li > a
+{
+	padding: 0 20px;
+	line-height: 100px;
+	vertical-align: center;
+	display: block;
+	height: 100px;
+	font-size: 16px;
+	
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	-o-transition: background 0.5s ease;
+	-ms-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+}
+
+nav > ul > li > a:hover, nav > ul > li.active > a
+{
+	background: #303030;
+	border-bottom: 3px solid #3399ff;
+}
+
+#dropDownMenu
+{
+	background: #303030;
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+	max-height: 0;
+	overflow: hidden;
+	
+	-webkit-transition: max-height 0.3s ease;
+	-moz-transition: max-height 0.3s ease;
+	-o-transition: max-height 0.3s ease;
+	-ms-transition: max-height 0.3s ease;
+	transition: max-height 0.3s ease;
+}
+
+#dropDownMenu li
+{
+	width: 100%;
+}
+
+#dropDownMenu li a
+{
+	display: block;
+	padding: 5px;
+	font-size: 14px;
+	text-align: left;
+	outline: 1px solid rgba(255, 255, 255, 0.2);
+	
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	-o-transition: background 0.5s ease;
+	-ms-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+}
+
+#dropDownTopA
+{
+	position: relative;
+}
+
+#dropDownMenu li a:hover, #dropDownMenu li.active a
+{
+	background: #606060;
+}
+
+#dropDownMenu:hover, #dropDownTop:hover ~ #dropDownMenu
+{
+	max-height: 100px;
+}
+
+.dropDownTopOn
+{
+	background: #303030;
+	border-bottom: 3px solid #3399ff;
+}
+
+/* ----------- SLIDESHOW ----------- */
+
+#allSlideshow
+{
+	float: left;
+	width: 48%;
+	margin-right: 4%;
+}
+
+#slideshow
+{
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+}
+
+#slideshow img
+{
+	width: 100%;
+	
+	-webkit-transition: opacity 1s ease;
+	-moz-transition: opacity 1s ease;
+	-o-transition: opacity 1s ease;
+	-ms-transition: opacity 1s ease;
+	transition: opacity 1s ease;
+}
+
+#buttons
+{
+	width: 40%;
+	height: 20px;
+	margin: 10px 0 0 30%;
+}
+
+#buttons img
+{
+	background: #606060;
+	display: block;
+	text-align: center;
+	width: 40%;
+	height: 30px;
+	margin: 0 5%;
+	float: left;
+	opacity: 0.7;
+	
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	-o-transition: background 0.5s ease;
+	-ms-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+}
+
+#buttons img:hover
+{
+	cursor: pointer;
+}
+
+/* ----------- CONTENT ------------- */
+.leftCol, .rightCol
+{
+	width: 49%;
+	float: left;
+	margin-bottom: 15px;
+}
+
+.leftCol
+{
+	margin-right: 2%;
+}
+
+.leftText
+{
+	width: 30%;
+	float: left;
+}
+
+.rightText
+{
+	width: 70%;
+	text-align: right;
+	float: left;
+}
+
+.centerText
+{
+	text-align: center;
+}
+
+.blockOfText
+{
+}
+
+#map
+{
+	width: 58%;
+	height: 68%;
+	float: left;
+}
+
+#searchData
+{
+	width: 40%;
+	height: 68%;
+	float: right;
+	overflow: scroll;
+}
+
+/* --------- TOTOP BUTTON ---------- */
+a#toTop
+{
+	background-image: url("../images/toTop.png");
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	opacity: 0;
+	visibility: hidden;
+	
+	-webkit-transition: all 0.75s ease;
+	-moz-transition: all 0.75s ease;
+	-o-transition: all 0.75s ease;
+	-ms-transition: all 0.75s ease;
+	transition: all 0.75s ease;
+}
+
+a#toTop:hover
+{
+	opacity: 1 !important;
+	cursor: pointer;
+}
+
+/* ---------------------------------- GENERAL ---------------------------------- */
+
+p
+{
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+
+a
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.clearfix
+{
+	clear: both;
+}
+
+hr
+{
+	border-top: 1px solid;
+	opacity: 0.3;
+	margin: 15px 0;
+	padding: 0;
+}
+
+.break
+{
+	margin-top: 10px;
+}
+
+td
+{
+	font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	border-bottom: 2px solid rgba(255, 255, 255, .3);
+	border-opacity: 0.3;
+	margin: 100px 30px 30px 0px;
+}
+
+/* ----------------------------------- MEDIA ----------------------------------- */
+
+@media screen and (max-width: 970px)
+{
+	
+}
+
+@media screen and (max-width: 700px)
+{
+	#buttons
+	{
+		height: 10px;
+	}
+	
+	/* --------- CONTENT ---------- */
+	.leftCol, .rightCol
+	{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 560px)
+{
+	/* --------- TOPBAR ---------- */
+	#topbar
+	{
+		float: none;
+		margin: auto;
+	}
+	
+	#topbar img
+	{
+		display: block;
+		margin: auto;
+	}
+	
+	/* ----------- NAV ------------ */
+	nav > ul
+	{
+		float: none;
+		height: 30px;
+		margin-top: 10px;
+	}
+	
+	nav > ul > li
+	{
+		width: 49%;
+		text-align: center;
+		padding: 0 0.5%;
+	}
+	
+	nav > ul > li > a
+	{
+		line-height: 30px;
+		height: 30px;
+		padding: 0;
+		font-size: 14px;
+	}
+	
+	#dropDownMenu li a
+	{
+		font-size: 12px;
+	}
+}
+
+
+

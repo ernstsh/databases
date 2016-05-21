@@ -2,7 +2,7 @@
 <?php
    include('_header.php');
 ?>
-<html">
+<html>
    
    <head>
       <title>Welcome </title>
