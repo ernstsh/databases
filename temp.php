@@ -2,6 +2,7 @@
 	session_start();
 	include("Config.php");
 	include("_header.php");
+	echo (password_hash('helllllllno', PASSWORD_DEFAULT));
 ?>
 <html>
 		<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">

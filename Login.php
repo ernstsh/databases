@@ -9,27 +9,38 @@
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT id FROM login_T WHERE username = '$myusername' and password = '$mypassword'";
+      //$sql = "SELECT id FROM login_T WHERE username = '$myusername' and password = '$mypassword'";
+	  $sql = "SELECT * FROM login_T WHERE username = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      //echo $count;
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-		 
-         //session_register("myusername");
-		 $_SESSION['login_user'] = $myusername;
-		 echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
-		 //header("Location: landing.php");
-
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
+	 //var_dump($result->password); 
+	  //echo $sql->password;
+	  //echo ($result->hash);
+	  
+			  $row = mysqli_fetch_array($result);
+		if(password_verify($row[1],$row[3])){
+			  //echo $row['id'];
+			  //echo $row[3];
+			  $active = $row['active'];
+			  
+			 $count = mysqli_num_rows($result);
+			  //echo $count;
+			 
+			  // If result matched $myusername and $mypassword, table row must be 1 row
+				
+			  if($count == 1) {
+				 
+				 //session_register("myusername");
+				 $_SESSION['login_user'] = $myusername;
+				 echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
+			  } 
+		}
+	  
+	  			  else {
+				$error = "Your Login Name or Password is invalid";
+			   }
 	  
    }
+   
 ?>
 <html>
    
@@ -69,7 +80,7 @@
                   <input type = "submit" value = " Submit "/><br />
                </form>
 			   
-               <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+               <div style = "font-size:11px; color:#FFFFFF; margin-top:10px"><?php echo $error; ?></div>
 					
             </div>
 				
