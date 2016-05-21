@@ -49,9 +49,12 @@
 
 	<!-- TOPBAR ==================================================================================-->
 	<div id = "topbar">
-		<a href = "landing.php"><img src = "images/logo.png" width="120" height="120" ></a>
+		<a style = "border-bottom: 2px solid rgba(255, 255, 255, .3);" href = "landing.php"><img src = "images/logo.png" width="120" height="120" ></a>	
 	</div>
+	
 	<!-- MAIN NAV ================================================================================-->
+	
+	<hr>
 	<nav>
 			<a href = "landing.php"> Landing </a>
 			<a href = "Login.php"> Login </a>
