@@ -1,5 +1,5 @@
 <?php
-   include('Config.php');
+   //include('Config.php');
    session_start();
    
    $user_check = $_SESSION['login_user'];
@@ -8,7 +8,7 @@
    
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    
-   $login_session = $row['id'];
+   $login_session = $_SESSION['id'];
    
    if(!isset($_SESSION['login_user'])){
       header("Location: Login.php");

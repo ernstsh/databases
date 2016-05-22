@@ -1,6 +1,7 @@
 <!--Landing page-->
 <?php
    include('_header.php');
+   include ('Session.php');
 ?>
 <html>
    

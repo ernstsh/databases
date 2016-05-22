@@ -2,6 +2,7 @@
 	session_start();
 	include("Config.php");
 	include("_header.php");
+	include("Session.php");
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
@@ -31,7 +32,9 @@
 				 
 				 //session_register("myusername");
 				 $_SESSION['login_user'] = $myusername;
+				 $_SESSION['id'] = $row[2];
 				 echo '<meta http-equiv="refresh" content="0; url=dashboard.php" />';
+				 //echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
 			  } 
 		}
 	  
