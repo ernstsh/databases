@@ -31,7 +31,7 @@
 				 
 				 //session_register("myusername");
 				 $_SESSION['login_user'] = $myusername;
-				 echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
+				 echo '<meta http-equiv="refresh" content="0; url=dashboard.php" />';
 			  } 
 		}
 	  
