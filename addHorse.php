@@ -26,15 +26,16 @@
 	$fphone = $_REQUEST['fphone'];
 	
 	//check vet is not already in DB
-	$query = "SELECT vID FROM vet_T WHERE firstName=$vfirstName AND lastName=$vlastName AND phone=$vphone";
+	$query = "SELECT vID FROM vet_T WHERE firstName='$vfirstName' AND lastName='$vlastName' AND phone='$vphone'";
 	$exec = $finalDB->query($query);
+	echo htmlspecialchars($exec);
 	//if($obj=$exec->fetch_object()){ //issue here
 	if($exec){
 		$vID = $exec;
 	}
 	//$exec->close();
 	//check farrier is not already in DB
-	$query = "SELECT fID FROM far_T WHERE firstName=$ffirstName AND lastName=$flastName AND phone=$fphone";
+	$query = "SELECT fID FROM far_T WHERE firstName='$ffirstName' AND lastName='$flastName' AND phone='$fphone'";
 	$exec = $finalDB->query($query);
 	//if($obj=$exec->fetch_object()){
 	if($exec){
@@ -115,24 +116,71 @@
 	$query = "INSERT INTO discipline_T(tlcid,English,Western,Dressage,Hunter,Jumping,CrossCountry,Barrels,Cutting,Reining,Driving,Roping,SaddleSeat,Showmanship,Halter,Endurance,Trail) Values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	if($statement = $finalDB->prepare($query)){
 		$tlcid = $tpID;
-		$English = $_REQUEST['English'];
-		$Western = $_REQUEST['Western'];
-		$Dressage = $_REQUEST['Dressage'];
-		$Hunter = $_REQUEST['Hunter'];
-		$Jumping = $_REQUEST['Jumping'];
-		$CrossCountry = $_REQUEST['CrossCountry'];
-		$Barrels = $_REQUEST['Barrels'];
-		$Cutting = $_REQUEST['Cutting'];
-		$Reining = $_REQUEST['Reining'];
-		$Driving = $_REQUEST['Driving'];
-		$Roping = $_REQUEST['Roping'];
-		$SaddleSeat = $_REQUEST['SaddleSeat'];
-		$Showmanship = $_REQUEST['Showmanship'];
-		$Halter = $_REQUEST['Halter'];
-		$Endurance = $_REQUEST['Endurance'];
-		$Trail = $_REQUEST['Trail'];
-		
-		$statement->bind_param('dddddddddddddddd', $tlcid,$English,$Western,$Dressage,$Hunter,$Jumping,$CrossCountry,$Barrels,$Cutting,$Reining,$Driving,$Roping,$SaddleSeat,$Showmanship,$Halter,$Endurance,$Trail);
+		$English = 0;
+		$Western = 0;
+		$Dressage = 0;
+		$Hunter = 0;
+		$Jumping = 0;
+		$Barrels = 0;
+		$CrossCountry = 0;
+		$Cutting = 0;
+		$Reining = 0;
+		$Driving = 0;
+		$Roping = 0;
+		$SaddleSeat = 0;
+		$Showmanship = 0;
+		$Halter = 0;
+		$Endurance = 0;
+		$Trail = 0;
+		if($_REQUEST['English']){
+			$English = $_REQUEST['English'];
+		}
+		if($_REQUEST['Western']){
+			$Western = $_REQUEST['Western'];
+		}
+		if($_REQUEST['Dressage']){
+			$Dressage = $_REQUEST['Dressage'];
+		}
+		if($_REQUEST['Hunter']){
+			$Hunter = $_REQUEST['Hunter'];
+		}
+		if($_REQUEST['Jumping']){
+			$Jumping = $_REQUEST['Jumping'];
+		}
+		if($_REQUEST['CrossCountry']){
+			$CrossCountry = $_REQUEST['CrossCountry'];
+		}
+		if($_REQUEST['Barrels']){
+			$Barrels = $_REQUEST['Barrels'];
+		}
+		if($_REQUEST['Cutting']){
+			$Cutting = $_REQUEST['Cutting'];
+		}
+		if($_REQUEST['Reining']){
+			$Reining = $_REQUEST['Reining'];
+		}
+		if($_REQUEST['Driving']){
+			$Driving = $_REQUEST['Driving'];
+		}
+		if($_REQUEST['Roping']){
+			$Roping = $_REQUEST['Roping'];
+		}	
+		if($_REQUEST['SaddleSeat']){
+			$SaddleSeat = $_REQUEST['SaddleSeat'];
+		}
+		if($_REQUEST['Showmanship']){
+			$Showmanship = $_REQUEST['Showmanship'];
+		}
+		if($_REQUEST['Halter']){
+			$Halter = $_REQUEST['Halter'];
+		}
+		if($_REQUEST['Endurance']){
+			$Endurance = $_REQUEST['Endurance'];
+		}
+		if($_REQUEST['Trail']){
+			$Trail = $_REQUEST['Trail'];
+		}
+		$statement->bind_param('siiiiiiiiiiiiiiii', $tlcid,$English,$Western,$Dressage,$Hunter,$Jumping,$CrossCountry,$Barrels,$Cutting,$Reining,$Driving,$Roping,$SaddleSeat,$Showmanship,$Halter,$Endurance,$Trail);
 		$statement->execute();
 		$statement->close();
 	}
@@ -141,13 +189,13 @@
 	}
 
 	//create initial vet record
-	$query = "INSERT INTO vetRec_T(vetRecid,date,comment,vID) Values(?,?,?,?)";
+	$query = "INSERT INTO vetRec_T(vetRecid,comment,vID) Values(?,?,?)";
 	
 	if($statement = $finalDB->prepare($query)){
-		$date = getdate();
+
 		$comment = "This is the first vet entry";
 		
-		$statement->bind_param('ssss', $vrecID,$date,$comment,$vID);
+		$statement->bind_param('sss', $vrecID,$comment,$vID);
 		$statement->execute();
 		$statement->close();
 	}
@@ -156,13 +204,13 @@
 	}
 	
 	//create initial farrier record PROBLEM
-	$query = "INSERT INTO farrierRec_T(farrierRecid,date,comment,fID) Values(?,?,?,?)";
+	$query = "INSERT INTO farrierRec_T(farrierRecid,comment,fID) Values(?,?,?)";
 	
 	if($statement = $finalDB->prepare($query)){
-		$date = getdate();
+
 		$comment = "This is the first farrier entry";
 		
-		$statement->bind_param('ssss', $frecID,$date,$comment,$fID);
+		$statement->bind_param('sss', $frecID,$comment,$fID);
 		$statement->execute();
 		$statement->close();
 	}
