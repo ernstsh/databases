@@ -61,7 +61,7 @@
 		$statement->execute();
 		$statement->close();
 		
-		header("Location: landing.php");
+		//header("Location: landing.php");
 	}
 	else{
 		printf("Error: %s\n", $finalDB->error);
@@ -103,7 +103,7 @@
 	
 	if($statement = $finalDB->prepare($query)){
 		$daysPW = $_REQUEST['dayPW'];
-		$statement->bind_param('sss', $daysPW,$hid,$tpid);
+		$statement->bind_param('dss', $daysPW,$hid,$tpID);
 		$statement->execute();
 		$statement->close();
 	}
@@ -132,7 +132,7 @@
 		$Endurance = $_REQUEST['Endurance'];
 		$Trail = $_REQUEST['Trail'];
 		
-		$statement->bind_param('ssssssssssssssss', $tlcid,$English,$Western,$Dressage,$Hunter,$Jumping,$CrossCountry,$Barrels,$Cutting,$Reining,$Driving,$Roping,$SaddleSeat,$Showmanship,$Halter,$Endurance,$Trail);
+		$statement->bind_param('dddddddddddddddd', $tlcid,$English,$Western,$Dressage,$Hunter,$Jumping,$CrossCountry,$Barrels,$Cutting,$Reining,$Driving,$Roping,$SaddleSeat,$Showmanship,$Halter,$Endurance,$Trail);
 		$statement->execute();
 		$statement->close();
 	}
@@ -155,7 +155,7 @@
 		printf("Error: %s\n", $finalDB->error);
 	}
 	
-	//create initial farrier record
+	//create initial farrier record PROBLEM
 	$query = "INSERT INTO farrierRec_T(farrierRecid,date,comment,fID) Values(?,?,?,?)";
 	
 	if($statement = $finalDB->prepare($query)){
@@ -169,5 +169,5 @@
 	else{
 		printf("Error: %s\n", $finalDB->error);
 	}
-	
+	header("Location: dashboard.php");
 ?>	

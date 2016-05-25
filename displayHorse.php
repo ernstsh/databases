@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	//connect to database
 	ini_set('display_errors', 'On');
 	$servername = "mysql.cs.orst.edu";
@@ -6,8 +7,8 @@
 	$password = "Fredis14";
 	$dbName = "cs340_ernstsh";
 	$finalDB = new mysqli($servername, $username, $password, $dbName);
-	
-	$query = "SELECT * FROM horse_T";
+	$tid = $_SESSION['id'];
+	$query = "SELECT * FROM horse_T WHERE tid=$tid";
 	
 	if($res = $finalDB->query($query)){
 		echo '<table>';
