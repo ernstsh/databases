@@ -1,4 +1,6 @@
 <?php 
+	session_start();
+	//include("Session.php");
 	//connect to database
 	ini_set('display_errors', 'On');
 	$servername = "mysql.cs.orst.edu";
@@ -7,21 +9,18 @@
 	$dbName = "cs340_ernstsh";
 	$finalDB = new mysqli($servername, $username, $password, $dbName);
 	
-	session_start();
-	
 	$hid = uniqid();
 	$tid = $_SESSION['id']; //issue here
-	echo $_SESSION
-	$vrecID = "vrec_".uniqid();
-	$frecID = "frec_".uniqid();
-	$tpID = "tpid_".uniqid();
+	$vrecID = uniqid("vrec_");
+	$frecID = uniqid("frec_");
+	$tpID = uniqid("tpid_");
 	
-	$vID = "v_".uniqid();
+	$vID = uniqid("v_");
 	$vfirstName = $_REQUEST['vfirstName'];
 	$vlastName = $_REQUEST['vlastName'];
 	$vphone = $_REQUEST['vphone'];
 	
-	$fID = "f_".uniqid();
+	$fID = uniqid("f_");
 	$ffirstName = $_REQUEST['ffirstName'];
 	$flastName = $_REQUEST['flastName'];
 	$fphone = $_REQUEST['fphone'];
@@ -29,17 +28,19 @@
 	//check vet is not already in DB
 	$query = "SELECT vID FROM vet_T WHERE firstName=$vfirstName AND lastName=$vlastName AND phone=$vphone";
 	$exec = $finalDB->query($query);
-	if($obj=$exec->fetch_object()){ //issue here
-		$vID = $obj->vID;
+	//if($obj=$exec->fetch_object()){ //issue here
+	if($exec){
+		$vID = $exec;
 	}
-	$exec->close();
+	//$exec->close();
 	//check farrier is not already in DB
 	$query = "SELECT fID FROM far_T WHERE firstName=$ffirstName AND lastName=$flastName AND phone=$fphone";
 	$exec = $finalDB->query($query);
-	if($obj=$exec->fetch_object()){
-		$vID = $obj->fID;
+	//if($obj=$exec->fetch_object()){
+	if($exec){
+		$fID = $exec;
 	}
-	$exec->close();
+	//$exec->close();
 	
 	//add horse
 	$query = "INSERT INTO horse_T(tid,hid,name,breed,reg,gender,age,height,owner,leesee,vetRecID,farRecID,trainProgID) Values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
