@@ -50,6 +50,7 @@
    <head>
       <title>Login Page</title>
       <link href = "css/style.css" rel = "stylesheet">
+	  <link href = "images/logo.ico" rel = "shortcut icon">
       <style type = "text/css">
          body {
             font-family:Arial, Helvetica, sans-serif;
@@ -69,7 +70,7 @@
       
    </head>
    
- <section style = " padding: 60px 0px 60px 30px "> 
+ <section style = " padding: 60px 0px 60px 25px "> 
    
 <img src = "images/logo.png" width="120" height="120" > 
 <img src = "images/logo.png" width="120" height="120" > 
@@ -92,15 +93,16 @@
    
    <body bgcolor = "#FFFFFF">
 <div class = "container">
-	<div style = " padding: 60px 60px 0px 15px " align = "Left">
+	<div style = " padding: 60px 60px 0px 15px " style = "float: left;  margin-left: 60px; width: 60px; height: 60px;">
 	   <br>
-	   <p>
+	   <p style = "font-size: 120px">
 	   Filler
 	   Filler
 	   Filler
 	   Filler
 	   Filler
 	   Filler
+	   Hi
 	   </P>
 			
     </div>
