@@ -1,7 +1,10 @@
 <!DOCTYPE PHP>
 <html>
-<head>
-<link href = "css/style.css" rel = "stylesheet">
+<?php
+session_start();
+include("_header.php");
+?>
+<head> 
 </head>
 <body>
 	<div>

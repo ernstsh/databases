@@ -1,34 +1,36 @@
 <!DOCTYPE PHP>
 <html>
-<head>
 <?php
 session_start();
 include("_header.php");
 ?>
+<head>
 </head>
 <body>
 	<div>
 		<!-- <input type="text" pattern = "[a-zA-Z0-9 ]+" title = "Only enter letters, numbers, or spaces" name="address"><br><br> -->
-		<h1>Add a Note</h1>
+		<h3>Schedule a Lesson</h3>
 		<form method="post" action="">
-			<br>
-			<label>Name</label>
-				<input type="text" pattern = "[a-zA-Z ]+" title = "Only enter letters !" name="name" required> <br>
 			<br>
 			<label>Date</label>
 				<input type="date" name="date" required><br>
 			<br>
 			
-			<label>Note Type</label>
-					<select name="Note">
-						<option value = "VetNote"> Vet </option>
-						<option value = "FarrierNote"> Farrier </option>
-						<option value = "Note"> Regular </option>
-					</select><br><br>
-			
-			<label>Note</label>
+			<label>Time</label>
+				<input type="text" name="time" required><br>
 			<br>
-				<label style="font-size:20"><textarea name="noteaArea" rows ="10" cols ="50"></textarea>
+			
+			<label>Your Name</label>
+				<input type="text" pattern = "[a-zA-Z ]+" title = "Only enter letters !" name="uName" required><br>
+			<br>
+			
+			<label>Trainer Name</label>
+				<input type="text" pattern = "[a-zA-Z ]+" title = "Only enter letters !" name="tName" required><br>
+			<br>
+			
+		
+			<label>Horse</label>
+				<input type="text" pattern = "[a-zA-Z ]+" title = "Only enter letters !" name="Horse" required><br>
 			<br>
 
 			<input type="submit" name="submit" value="Submit">
