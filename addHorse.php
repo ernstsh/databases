@@ -2,7 +2,7 @@
 	session_start();
 	//include("Session.php");
 	//connect to database
-	ini_set('display_errors', 'On');
+	//ini_set('display_errors', 'On');
 	$servername = "mysql.cs.orst.edu";
 	$username = "cs340_ernstsh";
 	$password = "Fredis14";
@@ -25,23 +25,56 @@
 	$flastName = $_REQUEST['flastName'];
 	$fphone = $_REQUEST['fphone'];
 	
+	
 	//check vet is not already in DB
 	$query = "SELECT vID FROM vet_T WHERE firstName='$vfirstName' AND lastName='$vlastName' AND phone='$vphone'";
 	$exec = $finalDB->query($query);
-	echo htmlspecialchars($exec);
-	//if($obj=$exec->fetch_object()){ //issue here
-	if($exec){
-		$vID = $exec;
+	if(mysqli_num_rows($exec)==0){
+		$query2 = "INSERT INTO vet_T(vID,firstName,lastName,street,city,state,zip,phone) Values(?,?,?,?,?,?,?,?)";
+	
+		if($statement = $finalDB->prepare($query2)){
+			$vstreet = $_REQUEST['vstreet'];
+			$vcity = $_REQUEST['vcity'];
+			$vstate = $_REQUEST['vstate'];
+			$vzip = $_REQUEST['vzip'];
+			
+			$statement->bind_param('ssssssds', $vID,$vfirstName,$vlastName,$vstreet,$vcity,$vstate,$vzip,$vphone);
+			$statement->execute();
+			$statement->close();
+		}
+		else{
+			printf("Error: %s\n", $finalDB->error);
+		}
 	}
-	//$exec->close();
+	else{
+		$res = $exec->fetch_object();
+		$vID = $res->vID;
+	}
+	
 	//check farrier is not already in DB
-	$query = "SELECT fID FROM far_T WHERE firstName='$ffirstName' AND lastName='$flastName' AND phone='$fphone'";
-	$exec = $finalDB->query($query);
-	//if($obj=$exec->fetch_object()){
-	if($exec){
-		$fID = $exec;
+	$query = "SELECT fID FROM farrier_T WHERE firstName='$ffirstName' AND lastName='$flastName' AND phone='$fphone'";
+	$exec2 = $finalDB->query($query);
+	if(mysqli_num_rows($exec2)==0){
+		$query2 = "INSERT INTO farrier_T(fID,firstName,lastName,street,city,state,zip,phone) Values(?,?,?,?,?,?,?,?)";
+	
+		if($statement = $finalDB->prepare($query2)){
+			$fstreet = $_REQUEST['fstreet'];
+			$fcity = $_REQUEST['fcity'];
+			$fstate = $_REQUEST['fstate'];
+			$fzip = $_REQUEST['fzip'];
+			
+			$statement->bind_param('ssssssds', $fID,$ffirstName,$flastName,$fstreet,$fcity,$fstate,$fzip,$fphone);
+			$statement->execute();
+			$statement->close();
+		}
+		else{
+			printf("Error: %s\n", $finalDB->error);
+		}
 	}
-	//$exec->close();
+	else{
+		$res = $exec2->fetch_object();
+		$fID = $res->fID;
+	}
 	
 	//add horse
 	$query = "INSERT INTO horse_T(tid,hid,name,breed,reg,gender,age,height,owner,leesee,vetRecID,farRecID,trainProgID) Values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -62,43 +95,11 @@
 		$statement->execute();
 		$statement->close();
 		
-		//header("Location: landing.php");
 	}
 	else{
 		printf("Error: %s\n", $finalDB->error);
 	}
-	//Insert vet
-	$query = "INSERT INTO vet_T(vID,firstName,lastName,street,city,state,zip,phone) Values(?,?,?,?,?,?,?,?)";
 	
-	if($statement = $finalDB->prepare($query)){
-		$vstreet = $_REQUEST['vstreet'];
-		$vcity = $_REQUEST['vcity'];
-		$vstate = $_REQUEST['vstate'];
-		$vzip = $_REQUEST['vzip'];
-		
-		$statement->bind_param('ssssssds', $vID,$vfirstName,$vlastName,$vstreet,$vcity,$vstate,$vzip,$vphone);
-		$statement->execute();
-		$statement->close();
-	}
-	else{
-		printf("Error: %s\n", $finalDB->error);
-	}
-	//Insert farrier
-	$query = "INSERT INTO farrier_T(fID,firstName,lastName,street,city,state,zip,phone) Values(?,?,?,?,?,?,?,?)";
-	
-	if($statement = $finalDB->prepare($query)){
-		$fstreet = $_REQUEST['fstreet'];
-		$fcity = $_REQUEST['fcity'];
-		$fstate = $_REQUEST['fstate'];
-		$fzip = $_REQUEST['fzip'];
-		
-		$statement->bind_param('ssssssds', $fID,$ffirstName,$flastName,$fstreet,$fcity,$fstate,$fzip,$fphone);
-		$statement->execute();
-		$statement->close();
-	}
-	else{
-		printf("Error: %s\n", $finalDB->error);
-	}
 	
 	$query = "INSERT INTO trainingProgram_T(daysPW,hid,tpid) Values(?,?,?)";
 	
@@ -189,13 +190,13 @@
 	}
 
 	//create initial vet record
-	$query = "INSERT INTO vetRec_T(vetRecid,comment,vID) Values(?,?,?)";
+	$query = "INSERT INTO vetRec_T(vetRecid,date,comment,vID) Values(?,?,?,?)";
 	
 	if($statement = $finalDB->prepare($query)){
-
+		$date = date("Y-m-d H:i:s");
 		$comment = "This is the first vet entry";
 		
-		$statement->bind_param('sss', $vrecID,$comment,$vID);
+		$statement->bind_param('ssss', $vrecID, $date, $comment,$vID);
 		$statement->execute();
 		$statement->close();
 	}
@@ -204,13 +205,13 @@
 	}
 	
 	//create initial farrier record PROBLEM
-	$query = "INSERT INTO farrierRec_T(farrierRecid,comment,fID) Values(?,?,?)";
+	$query = "INSERT INTO farrierRec_T(farrierRecid,dates,comments,fID) Values(?,?,?,?)";
 	
 	if($statement = $finalDB->prepare($query)){
-
+		$date = date("Y-m-d H:i:s");
 		$comment = "This is the first farrier entry";
 		
-		$statement->bind_param('sss', $frecID,$comment,$fID);
+		$statement->bind_param('ssss', $frecID,$date,$comment,$fID);
 		$statement->execute();
 		$statement->close();
 	}
