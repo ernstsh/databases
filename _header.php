@@ -58,7 +58,6 @@
 	<nav>
 			<a href = "dashboard.php"> Landing </a>
 			<a href = "Login.php"> Login </a>
-			<a href = "signUp.php"> Sign Up</a>
 			<a href = "Logout.php"> Logout </a>
 			
 			

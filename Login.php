@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include("Config.php");
-	include("_header.php");
+	//include("_header.php");
 	include("Session.php");
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -49,7 +49,7 @@
    
    <head>
       <title>Login Page</title>
-      
+      <link href = "css/style.css" rel = "stylesheet">
       <style type = "text/css">
          body {
             font-family:Arial, Helvetica, sans-serif;
@@ -69,9 +69,43 @@
       
    </head>
    
+ <section style = " padding: 60px 0px 60px 30px "> 
+   
+<img src = "images/logo.png" width="120" height="120" > 
+<img src = "images/logo.png" width="120" height="120" > 
+<img src = "images/logo.png" width="120" height="120" > 
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >
+<img src = "images/logo.png" width="120" height="120" >   
+ </section>
+   <hr>
+   <br>
+   
    <body bgcolor = "#FFFFFF">
+<div class = "container">
+	<div style = " padding: 60px 60px 0px 15px " align = "Left">
+	   <br>
+	   <p>
+	   Filler
+	   Filler
+	   Filler
+	   Filler
+	   Filler
+	   Filler
+	   </P>
+			
+    </div>
 	
-      <div align = "center">
+      <div style = " padding: 0px 60px 60px 0px; float: right " align = "Right">
          <div style = "width:300px; border: solid 1px #333333; " align = "left">
             <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
 				
@@ -80,8 +114,9 @@
                <form action = "" method = "post">
                   <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
                   <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
-                  <input type = "submit" value = " Submit "/><br />
+                  <input type = "submit" value = " Submit "/><br/>				  
                </form>
+			   <u><a href = "signUp.php">Sign Up</a></u>
 			   
                <div style = "font-size:11px; color:#FFFFFF; margin-top:10px"><?php echo $error; ?></div>
 					
@@ -90,6 +125,8 @@
          </div>
 			
       </div>
+</div>
 
    </body>
+
 </html>

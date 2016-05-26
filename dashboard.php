@@ -12,7 +12,7 @@
    </head>
    
    <body>
-      <?php echo $login_session; echo $user_check; echo $row[0]; print_r($_SESSION);?>
+      <?php //echo $login_session; echo $user_check; echo $row[0]; print_r($_SESSION);?>
 	  <br><a href="newHorse.php">Add a Horse</a>
 	  
 	  <div>
