@@ -245,6 +245,10 @@ nav > ul > li > a:hover, nav > ul > li.active > a
 {
 }
 
+.box {
+   border:#666666 solid 1px;
+}
+
 #map
 {
 	width: 58%;

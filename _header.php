@@ -49,7 +49,7 @@
 
 	<!-- TOPBAR ==================================================================================-->
 	<div id = "topbar">
-		<a style = "border-bottom: 2px solid rgba(255, 255, 255, .3);" href = "landing.php"><img src = "images/logo.png" width="120" height="120" ></a>	
+		<a style = "border-bottom: 2px solid rgba(255, 255, 255, .3);" href = "Login.php"><img src = "images/logo.png" width="120" height="120" ></a>	
 	</div>
 	
 	<!-- MAIN NAV ================================================================================-->
@@ -71,7 +71,8 @@
 			</li>
 			-->
 	</nav>
-	
+
+</body>
 	<!-- <hr> -->
 	
 </html>

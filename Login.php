@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include("Config.php");
-	//include("_header.php");
+	include("_header2.php");
 	include("Session.php");
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -49,28 +49,9 @@
    
    <head>
       <title>Login Page</title>
-      <link href = "css/style.css" rel = "stylesheet">
-	  <link href = "images/logo.ico" rel = "shortcut icon">
-      <style type = "text/css">
-         body {
-            font-family:Arial, Helvetica, sans-serif;
-            font-size:14px;
-         }
-         
-         label {
-            font-weight:bold;
-            width:100px;
-            font-size:14px;
-         }
-         
-         .box {
-            border:#666666 solid 1px;
-         }
-      </style>
-      
    </head>
    
- <section style = " padding: 60px 0px 60px 25px "> 
+ <div style = " padding: 60px 0px 60px 25px "> 
    
 <img src = "images/logo.png" width="120" height="120" > 
 <img src = "images/logo.png" width="120" height="120" > 
@@ -87,15 +68,15 @@
 <img src = "images/logo.png" width="120" height="120" >
 <img src = "images/logo.png" width="120" height="120" >
 <img src = "images/logo.png" width="120" height="120" >   
- </section>
+ </div>
    <hr>
    <br>
    
-   <body bgcolor = "#FFFFFF">
+   <body style = "font-family:Arial, Helvetica, sans-serif; font-size:14px;" bgcolor = "#FFFFFF">
 <div class = "container">
 	<div style = " padding: 60px 60px 0px 15px " style = "float: left;  margin-left: 60px; width: 60px; height: 60px;">
 	   <br>
-	   <p style = "font-size: 120px">
+	   <p style = "font-size: 30px">
 	   Filler
 	   Filler
 	   Filler
@@ -114,8 +95,8 @@
             <div style = "margin:30px">
                
                <form action = "" method = "post">
-                  <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
-                  <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
+                  <label style = "font-weight:bold; width:100px; font-size:14px;" >UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
+                  <label style = "font-weight:bold; width:100px; font-size:14px;" >Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
                   <input type = "submit" value = " Submit "/><br/>				  
                </form>
 			   <u><a href = "signUp.php">Sign Up</a></u>
