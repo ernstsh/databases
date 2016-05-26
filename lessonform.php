@@ -9,7 +9,7 @@ include("_header.php");
 <body>
 	<div>
 		<!-- <input type="text" pattern = "[a-zA-Z0-9 ]+" title = "Only enter letters, numbers, or spaces" name="address"><br><br> -->
-		<h3>Schedule a Lesson</h3>
+		<h1>Schedule a Lesson</h1>
 		<form method="post" action="">
 			<br>
 			<label>Date</label>
@@ -18,6 +18,10 @@ include("_header.php");
 			
 			<label>Time</label>
 				<input type="text" name="time" required><br>
+			<br>
+			
+			<label>Lesson</label>
+				<input type="text" name="lesson" required><br>
 			<br>
 			
 			<label>Your Name</label>
