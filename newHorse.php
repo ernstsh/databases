@@ -1,10 +1,11 @@
 <!DOCTYPE PHP>
 <html>
 <head>
+<link href = "css/style.css" rel = "stylesheet">
 </head>
 <body>
 	<div>
-		<h3>Add a Horse</h3>
+		<h1>Add a Horse</h1>
 		<form method="post" action="addHorse.php">
 			<h3>Horse Information</h3>
 			<label>Name</label>
