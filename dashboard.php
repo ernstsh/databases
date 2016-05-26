@@ -16,7 +16,21 @@
 	  <br><a href="newHorse.php">Add a Horse</a>
 	  
 	  <div>
-		<?php include('displayHorse.php');?>
+		<table style="border: 1px solid white">
+			<tr>
+				<th colspan="7">Horse Information</th>
+			</tr>
+			<tr>
+				<td>Horse Name</td>
+				<td>Breed</td>
+				<td>Registration</td>
+				<td>Gender</td>
+				<td>Age</td>
+				<td>Height</td>
+				<td>Owner</td>
+			</tr>	
+			<?php include('displayHorse.php');?>
+		</table>
 	  </div>
 	  
    </body>

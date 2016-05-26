@@ -11,7 +11,7 @@
 	$query = "SELECT * FROM horse_T WHERE tid=$tid";
 	
 	if($res = $finalDB->query($query)){
-		echo '<table>';
+		//echo '<table>';
 		while($obj= $res->fetch_object()){
 			echo '<tr>';
 			echo '<td>'.htmlspecialchars($obj->name).'</td>';
@@ -21,6 +21,9 @@
 			echo '<td>'.htmlspecialchars($obj->age).'</td>';
 			echo '<td>'.htmlspecialchars($obj->height).'</td>';
 			echo '<td>'.htmlspecialchars($obj->owner).'</td>';
+			echo '<td> <form method="post" action="note.php"><input type="hidden" name="tID" value="'.htmlspecialchars($obj->trainProgID).'"><input type="submit" value="Add Training Note"></form></td>';
+			echo '<td><button>View Vet Record</button></td>';
+			echo '<td><button>View Farrier Record</button></td>';
 			echo '</tr>';
 		}
 		$res->close();
@@ -28,6 +31,6 @@
 	else{
 			echo "<p>Sorry no result match your search.</p>";
 	}
-	echo '</table>';
+	//echo '</table>';
 	
 ?>	
