@@ -21,7 +21,7 @@
 		if($statement = $finalDB->prepare($query)){
 			$date = $_REQUEST['date'];
 			$notes = $_REQUEST['noteaArea'];
-			$tpid = $_REQUEST['tid'];
+			$tpid = $_REQUEST['tpid'];
 			
 			$statement->bind_param('sss', $date,$tpid,$notes);
 			$statement->execute();

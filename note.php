@@ -5,7 +5,7 @@
 session_start();
 include("_header.php");
 //$tid = $_REQUEST['tID'];
-echo '<input type="hidden" name="tid" value="'.$_REQUEST['tID'].'">';
+//echo '<input type="hidden" name="tpid" value="'.$_REQUEST['tpID'].'">';
 
 ?>
 </head>
@@ -15,6 +15,7 @@ echo '<input type="hidden" name="tid" value="'.$_REQUEST['tID'].'">';
 		<!-- <input type="text" pattern = "[a-zA-Z0-9 ]+" title = "Only enter letters, numbers, or spaces" name="address"><br><br> -->
 		<h1>Add a Note</h1>
 		<form method="post" action="addNote.php">
+			<?php echo '<input type="hidden" name="tpid" value="'.$_REQUEST['tpID'].'">';?>
 			<br>
 			<label>Name</label>
 				<input type="text" pattern = "[a-zA-Z ]+" title = "Only enter letters !" name="name" required> <br>
