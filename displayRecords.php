@@ -13,13 +13,25 @@
 		$query = "SELECT vetRec_T.date,vetRec_T.comment,vet_T.firstName,vet_T.lastName FROM vetRec_T,vet_T WHERE vetRec_T.vetRecid='$vRecID' AND vetRec_T.vID=vet_T.vID";
 		
 		if($exec = $finalDB->query($query)){
+			//$res = $exec->fetch_object();
+			$query2 = "SELECT name FROM horse_T WHERE horse_T.vetRecID='$vRecID'";
+			$exec2 = $finalDB->query($query2);
+			$res2 = $exec2->fetch_object();
 			echo '<table>';
+			echo '<tr>';
+			echo '<th colspan="3"> Vet Records for '.htmlspecialchars($res2->name).'</th>';
+			echo '</tr>';
+			echo '<tr>';
+			echo '<td> Date </td>';
+			echo '<td> Comment </td>';
+			echo '<td> Vet </td>';
+			echo '</td>';
 			while($res = $exec->fetch_object()){
+			//while($res){	
 				echo '<tr>';
 				echo '<td>'.htmlspecialchars($res->date).'</td>';
 				echo '<td>'.htmlspecialchars($res->comment).'</td>';
-				echo '<td>'.htmlspecialchars($res->firstName).'</td>';
-				echo '<td>'.htmlspecialchars($res->lastName).'</td>';
+				echo '<td>'.htmlspecialchars($res->firstName).' '.htmlspecialchars($res->lastName).'</td>';
 				echo '<tr>';
 			}
 			//$res->close();
