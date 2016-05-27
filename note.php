@@ -4,8 +4,8 @@
 <?php
 session_start();
 include("_header.php");
-$tid = $_REQUEST['tID'];
-echo '<input type="hidden" name="tid" value="'.$tid.'">';
+//$tid = $_REQUEST['tID'];
+echo '<input type="hidden" name="tid" value="'.$_REQUEST['tID'].'">';
 
 ?>
 </head>
