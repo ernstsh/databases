@@ -13,7 +13,7 @@
    
    <body>
       <?php //echo $login_session; echo $user_check; echo $row[0]; print_r($_SESSION);?>
-	  <br><a href="newHorse.php">Add a Horse</a>
+	  <br><a href="newHorse.php"><button>Add a Horse</button></a>
 	  
 	  <div>
 		<table style="border: 1px solid white">

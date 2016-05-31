@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+  include('_header.php');
 	//connect to database
 	ini_set('display_errors', 'On');
 	$servername = "mysql.cs.orst.edu";
