@@ -18,14 +18,12 @@
 			$query2 = "SELECT name FROM horse_T WHERE horse_T.vetRecID='$vRecID'";
 			$exec2 = $finalDB->query($query2);
 			$res2 = $exec2->fetch_object();
-			echo '<table>';
-			echo '<tr>';
+			echo "<table border ='1'>";
 			echo '<th colspan="3"> Vet Records for '.htmlspecialchars($res2->name).'</th>';
+			echo "<tr><th> Date <th> Comment <th> Vet </tr>";
+			echo '<tr>';
 			echo '</tr>';
 			echo '<tr>';
-			echo '<td> Date </td>';
-			echo '<td> Comment </td>';
-			echo '<td> Vet </td>';
 			echo '</td>';
 			while($res = $exec->fetch_object()){
 			//while($res){	
@@ -48,7 +46,12 @@
 		$query = "SELECT farrierRec_T.dates,farrierRec_T.comments,farrier_T.firstName,farrier_T.lastName FROM farrierRec_T,farrier_T WHERE farrierRec_T.farrierRecid='$fRecID' AND farrierRec_T.fID=farrier_T.fID";
 		
 		if($exec = $finalDB->query($query)){
-			echo '<table>';
+			$query2 = "SELECT name FROM horse_T WHERE horse_T.farRecID='$fRecID'";
+			$exec2 = $finalDB->query($query2);
+			$res2 = $exec2->fetch_object();
+			echo "<table border ='1'>";
+			echo '<th colspan="3"> Farrier Records for '.htmlspecialchars($res2->name).'</th>';
+			echo "<tr><th> Date <th> Comment <th> First Name <th> Last Name </tr>";
 			while($res = $exec->fetch_object()){
 				echo '<tr>';
 				echo '<td>'.htmlspecialchars($res->dates).'</td>';

@@ -49,10 +49,11 @@
    
    <head>
       <title>Login Page</title>
+
    </head>
-<div id = "megadiv" style = "top:0px; bottom: 0px; left: 0px; right: 0px; padding: 0px 25px 0px 25px; width:100%; height:100%;">   
+<div id = "megadiv" style = "top:0px; bottom: 0px; left: 0px; right: 0px; padding: 0px 25px 0px 25px; max-width: 99%; max-height: 99%;">   
 			 <div > 
-					<center><img src = "images/logov3_1.png" width="1500" height="500"></center> <!-- width="1500" height="600"-->
+					<center><img src = "images/logov3_1.png" style = "max-width: 80%; max-height: 70%" ></center> <!-- width="1500" height="600"-->
 	 
 			 </div>
 			   <hr style = "margin: 0px">
@@ -87,7 +88,7 @@
 						
 				</div>
 				
-				   <p style = "font-size: 30px; width: 33em; border: 1px solid #FFFFFF; word-wrap: break-word;">
+				   <p style = "font-size: 30px; max-width: 50%; max-height: 50%; border: 1px solid #FFFFFF; word-wrap: break-word;">
 			The unanimous Declaration of the thirteen united States of America,
 			He has refused his Assent to Laws, the most wholesome and necessary for the public good.
 			He has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them.
@@ -97,16 +98,6 @@
 
 </body>
 
-<!-- doesn't work -->
-<script type='text/javascript'>
-        function autoResizeDiv()
-        {
-            document.getElementById('megadiv').style.height = window.innerHeight;
-			document.getElementById('megadiv').style.weight = window.innerWeight;
-        }
-        window.onresize = autoResizeDiv;
-        autoResizeDiv();
-</script>
 
 </div>
 
