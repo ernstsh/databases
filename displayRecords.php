@@ -67,5 +67,28 @@
 		}
 		echo '</table>';
 	}
+		else if($_REQUEST['indic']=="note"){
+		$tpID = $_REQUEST['tpID'];
+		$query = "SELECT trainNote_T.date,trainNote_T.notes FROM trainNote_T WHERE trainNote_T.tpid='$tpID'";
+		if($exec = $finalDB->query($query)){
+			$query2 = "SELECT name FROM horse_T, trainingProgram_T WHERE horse_T.hid=trainingProgram_T.hid AND trainingProgram_T.tpid='$tpID'";
+			$exec2 = $finalDB->query($query2);
+			$res2 = $exec2->fetch_object();
+			echo "<table border ='1'>";
+			echo '<th colspan="3"> Note Records for '.htmlspecialchars($res2->name).'</th>';
+			echo "<tr><th> Date <th> Comment </tr>";
+			while($res = $exec->fetch_object()){
+				echo '<tr>';
+				echo '<td>'.htmlspecialchars($res->date).'</td>';
+				echo '<td>'.htmlspecialchars($res->notes).'</td>';
+				echo '<tr>';
+			}
+			//$res->close();
+		}
+		else{
+			echo "<p>Sorry no result match your search.</p>";
+		}
+		echo '</table>';
+	}
 	
 ?>	

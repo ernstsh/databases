@@ -8,7 +8,7 @@
 	$dbName = "cs340_ernstsh";
 	$finalDB = new mysqli($servername, $username, $password, $dbName);
 	$tid = $_SESSION['id'];
-	$query = "SELECT * FROM horse_T WHERE tid=$tid";
+	$query = "SELECT * FROM horse_T, trainingProgram_T WHERE tid=$tid AND horse_T.hid=trainingProgram_T.hid";
 	
 	if($res = $finalDB->query($query)){
 		//echo '<table>';
@@ -24,6 +24,7 @@
 			echo '<td> <form method="post" action="note.php"><input type="hidden" name="tpID" value="'.htmlspecialchars($obj->trainProgID).'"><input type="submit" value="Add Training Note"></form></td>';
 			echo '<td><form method="post" action="displayRecords.php"><input type="hidden" name="vRecID" value="'.htmlspecialchars($obj->vetRecID).'"><input type="hidden" name="indic" value="vet"><input type="submit" value="View Vet Record"></form></td>';
 			echo '<td><form method="post" action="displayRecords.php"><input type="hidden" name="fRecID" value="'.htmlspecialchars($obj->farRecID).'"><input type="hidden" name="indic" value="far"><input type="submit" value="View Farrier Record"></form></td>';
+			echo '<td><form method="post" action="displayRecords.php"><input type="hidden" name="tpID" value="'.htmlspecialchars($obj->tpid).'"><input type="hidden" name="indic" value="note"><input type="submit" value="View Note"></form></td>';
 			echo '</tr>';
 		}
 		$res->close();
