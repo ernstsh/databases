@@ -14,7 +14,7 @@
 		//NEED TO FIGURE OUT HOW TO GET VETRECID
 		$vfirstName = $_REQUEST['vfirstName'];
 		$vlastName = $_REQUEST['vlastName'];
-		$vphone = $_REQUEST['phone'];
+		$vphone = $_REQUEST['vphone'];
 		$query = "SELECT vID FROM vet_T WHERE firstName='$vfirstName' AND lastName='$vlastName' AND phone='$vphone'";
 		$exec = $finalDB->query($query);
 		$res = $exec->fetch_object();
@@ -24,6 +24,7 @@
 		if($statement = $finalDB->prepare($query)){
 			$date = date("Y-m-d H:i:s");
 			$comment = $_REQUEST['noteaArea'];
+			$vrecID = $_REQUEST['vrecid'];
 			
 			$statement->bind_param('ssss', $vrecID, $date, $comment,$vID);
 			$statement->execute();
@@ -47,6 +48,7 @@
 		if($statement = $finalDB->prepare($query)){
 			$date = date("Y-m-d H:i:s");
 			$comment = $_REQUEST['noteaArea'];
+			$frecID = $_REQUEST['frecid'];
 			
 			$statement->bind_param('ssss', $frecID,$date,$comment,$fID);
 			$statement->execute();
@@ -71,6 +73,6 @@
 			printf("Error: %s\n", $finalDB->error);
 		}
 	}
-	header("Location: dashboard.php");
+	echo '<meta http-equiv="refresh" content="0; url=dashboard.php" />';
 	
 ?>	

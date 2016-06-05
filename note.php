@@ -28,6 +28,8 @@ include("_header.php");
 		<h1>Add a Note</h1>
 		<form method="post" action="addNote.php">
 			<?php echo '<input type="hidden" name="tpid" value="'.$_REQUEST['tpID'].'">';?>
+			<?php echo '<input type="hidden" name="vrecid" value="'.$_REQUEST['vRecID'].'">';?>
+			<?php echo '<input type="hidden" name="frecid" value="'.$_REQUEST['fRecID'].'">';?>
 			<!--<br>
 			<label>Name</label>
 				<input type="text" pattern = "[a-zA-Z ]+" title = "Only enter letters !" name="name" required> <br>
@@ -51,7 +53,7 @@ include("_header.php");
 					<input type="text" name="vlastName">
 				<br>
 				<label>Phone</label>
-					<input type="text" name="phone">
+					<input type="text" name="vphone">
 				<br>
 			</div>
 			
@@ -63,7 +65,7 @@ include("_header.php");
 					<input type="text" name="flastName">
 				<br>
 				<label>Phone</label>
-					<input type="text" name="phone">
+					<input type="text" name="fphone">
 				<br>
 			</div>
 			

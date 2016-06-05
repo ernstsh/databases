@@ -21,7 +21,7 @@
 			echo '<td>'.htmlspecialchars($obj->age).'</td>';
 			echo '<td>'.htmlspecialchars($obj->height).'</td>';
 			echo '<td>'.htmlspecialchars($obj->owner).'</td>';
-			echo '<td> <form method="post" action="note.php"><input type="hidden" name="tpID" value="'.htmlspecialchars($obj->trainProgID).'"><input type="submit" value="Add Training Note"></form></td>';
+			echo '<td> <form method="post" action="note.php"><input type="hidden" name="tpID" value="'.htmlspecialchars($obj->trainProgID).'"><input type="hidden" name="vRecID" value="'.htmlspecialchars($obj->vetRecID).'"><input type="hidden" name="fRecID" value="'.htmlspecialchars($obj->farRecID).'"><input type="submit" value="Add Training Note"></form></td>';
 			echo '<td><form method="post" action="displayRecords.php"><input type="hidden" name="vRecID" value="'.htmlspecialchars($obj->vetRecID).'"><input type="hidden" name="indic" value="vet"><input type="submit" value="View Vet Record"></form></td>';
 			echo '<td><form method="post" action="displayRecords.php"><input type="hidden" name="fRecID" value="'.htmlspecialchars($obj->farRecID).'"><input type="hidden" name="indic" value="far"><input type="submit" value="View Farrier Record"></form></td>';
 			echo '<td><form method="post" action="displayRecords.php"><input type="hidden" name="tpID" value="'.htmlspecialchars($obj->tpid).'"><input type="hidden" name="indic" value="note"><input type="submit" value="View Note"></form></td>';

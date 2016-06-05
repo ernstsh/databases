@@ -89,10 +89,9 @@
 				</div>
 				
 				   <p style = "font-size: 30px; max-width: 50%; max-height: 50%; border: 1px solid #FFFFFF; word-wrap: break-word;">
-			The unanimous Declaration of the thirteen united States of America,
-			He has refused his Assent to Laws, the most wholesome and necessary for the public good.
-			He has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them.
-
+					We are H-Tracker, tracking website for horse trainers.
+					We offer our user ways to keep track of the Vet records, Farrier records, and notes for all the horses they are currently
+					training. Our mission is to provide our user with a tool to store and keep track of all the notes relating to their horses.
 				   </P>
 			</div>
 
