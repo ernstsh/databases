@@ -12,7 +12,7 @@
 		$statement->bind_param('isss', $userId, $username, $password, $hashed);
 		$statement->execute();
 		$statement->close();
-		echo '<meta http-equiv="refresh" content="0; url=landing.php" />';
+		echo '<meta http-equiv="refresh" content="0; url=Login.php" />';
 	}
 	else{
 		printf("Error: %s\n", $db->error);

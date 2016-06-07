@@ -23,7 +23,6 @@
 	<hr>
 	<nav>
 			<a href = "dashboard.php"> Landing </a>
-			<a href = "Login.php"> Login </a>
 			<a href = "Logout.php"> Logout </a>
 			
 			
