@@ -53,7 +53,7 @@ include("_header.php");
 			<label>State</label>
 				<input type="text" pattern = "[a-zA-Z]{2}" title = "enter 2 letters !" name="vstate" required> <br>
 			<label>Zip Code</label>
-				<input type="text" pattern = "[0-9]{6}" title = "enter 6 numbers" name="vzip" required> <br>
+				<input type="text" pattern = "[0-9]{5}" title = "enter 5 numbers" name="vzip" required> <br>
 				
 			<h3>Farrier Information</h3>
 			<label>First Name</label>
@@ -70,7 +70,7 @@ include("_header.php");
 			<label>State</label>
 				<input type="text" pattern = "[a-zA-Z]{2}" title = "enter 2 letters !" name="fstate" required> <br>
 			<label>Zip Code</label>
-				<input type="text" pattern = "[0-9]{5}" title = "enter 6 numbers" name="fzip" required> <br>
+				<input type="text" pattern = "[0-9]{5}" title = "enter 5 numbers" name="fzip" required> <br>
 				
 			<h3>Training Program</h3>
 			<label>Number of Days Per Week</label>
