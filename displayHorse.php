@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	//connect to database
-	ini_set('display_errors', 'On');
+	//ini_set('display_errors', 'On');
 	$servername = "mysql.cs.orst.edu";
 	$username = "cs340_ernstsh";
 	$password = "Fredis14";

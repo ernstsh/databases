@@ -1,36 +1,21 @@
 <?php
-	session_start();
-	include("Config.php");
-	include("_header.php");
-	echo (password_hash('helllllllno', PASSWORD_DEFAULT));
+session_start();
+$servername = "mysql.cs.orst.edu";
+$username = "cs340_ernstsh";
+$password = "Fredis14";
+$dbName = "cs340_ernstsh";
+$finalDB = new mysqli($servername, $username, $password, $dbName);
+
+	$vRecID = $_REQUEST['vRecID'];
+	$vID = $_REQUEST['vid'];
+	$dates = $_REQUEST['dates'];
+	// echo $vRecID;
+	// echo $vID;
+	// echo $dates;
+	$query3 ="CALL deleteNote(".$vRecID.",".$dates.",".$vID.");";
+	$finalDB->query($query3);
+	
+
+
+ echo '<meta http-equiv="refresh" content="0; url=dashboard.php" />';
 ?>
-<html>
-		<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-		<tr>
-		<form name="form1" method="post" action="checklogin.php">
-		<td>
-		<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-		<tr>
-		<td colspan="3"><strong>Member Login </strong></td>
-		</tr>
-		<tr>
-		<td width="78">Username</td>
-		<td width="6">:</td>
-		<td width="294"><input name="myusername" type="text" id="myusername"></td>
-		</tr>
-		<tr>
-		<td>Password</td>
-		<td>:</td>
-		<td><input name="mypassword" type="text" id="mypassword"></td>
-		</tr>
-		<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td><input type="submit" name="Submit" value="Login"></td>
-		</tr>
-		</table>
-		</td>
-		</form>
-		</tr>
-		</table>
-</html>
