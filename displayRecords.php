@@ -71,6 +71,7 @@
 	}
 		else if($_REQUEST['indic']=="note"){
 		$tpID = $_REQUEST['tpID'];
+		//echo $tpID;
 		$query = "SELECT trainNote_T.date,trainNote_T.notes FROM trainNote_T WHERE trainNote_T.tpid='$tpID'";
 		if($exec = $finalDB->query($query)){
 			$query2 = "SELECT name FROM horse_T, trainingProgram_T WHERE horse_T.hid=trainingProgram_T.hid AND trainingProgram_T.tpid='$tpID'";

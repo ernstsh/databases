@@ -65,6 +65,10 @@
 			$notes = $_REQUEST['noteaArea'];
 			$tpid = $_REQUEST['tpid'];
 			
+			//echo $notes;
+			//echo $tpid;
+			//echo $date;
+			
 			$statement->bind_param('sss', $date,$tpid,$notes);
 			$statement->execute();
 			$statement->close();

@@ -6,14 +6,18 @@ $password = "Fredis14";
 $dbName = "cs340_ernstsh";
 $finalDB = new mysqli($servername, $username, $password, $dbName);
 
+	$hid = $_REQUEST['hid'];
 	$vRecID = $_REQUEST['vRecID'];
-	$vID = $_REQUEST['vid'];
-	$dates = $_REQUEST['dates'];
-	// echo $vRecID;
-	// echo $vID;
-	// echo $dates;
-	//$query3 ="CALL deleteNote(".$vRecID.",".$dates.",".$vID.");";
-	$query3 ="CALL deleteNote('$vRecID','$dates','$vID');";
+	$fRecID = $_REQUEST['fRecID'];
+	$tpID = $_REQUEST['tpID'];
+
+	 //echo $vRecID;
+	 //echo $hid;
+	 //echo $fRecID;
+	 //echo $tpID;
+	 
+	$query3 ="CALL deleteHorse('$hid','$vRecID','$fRecID','$tpID');";
+	//$query3 ="CALL deleteHorse('$hid');";
 	$finalDB->query($query3);
 	
 
