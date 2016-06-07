@@ -19,9 +19,9 @@
 			<legend> Personal information:</legend>
 			
 			User Name:<br>
-			<input type="text" name="username"><br>
+			<input type="text" pattern = "[a-zA-Z0-9 ]{6,20}" title = "enter letters and or numbers and must be 6 to 20 character long !" name="username" required><br>
 			Password:<br>
-			<input type="text" name="password"><br>
+			<input type="text" pattern = "[a-zA-Z0-9 ]{6,30}" title = "enter letters and or numbers and must be 6 to 30 character long !"  name="password" required><br>
 
 	<br>
 	<input type="submit" name = "submit" value="Submit">

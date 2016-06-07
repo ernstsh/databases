@@ -18,7 +18,7 @@ include("_header.php");
 				<input type="text" name="breed" required>
 			<br>
 			<label>Registration</label>
-				<input type="text" name="reg">
+				<input type="text" pattern = "[a-zA-Z0-9 ]{3,15}" title = "enter numbers & letters !" name="reg">
 			<br>
 			<label>Gender</label><br>
 				<input type="radio" name="gender" value="Stallion">Stallion<br>
@@ -26,55 +26,55 @@ include("_header.php");
 				<input type="radio" name="gender" value="Mare">Mare
 			<br>
 			<label>Age</label>
-				<input type="text" name="age">
+				<input type="text" pattern = "[0-9 ]{1,2}" title = "enter numbers !" name="age">
 			<br>
 			<label>Height</label>
-				<input type="text" name="height">
+				<input type="text" pattern = "[0-9. ]+" title = "enter numbers in this format #.#!" name="height">
 			<br>
 			<label>Owner</label>
-				<input type="text" name="owner">
+				<input type="text" pattern = "[a-zA-Z ]{1,30}" title = "enter letters between 1 to 30!" name="owner">
 			<br>
 			<label>Leasee</label>
-				<input type="text" name="leasee">
+				<input type="text" pattern = "[a-zA-Z ]{4,30}" title = "enter in 'none' for now!"name="leasee">
 			<br>
 			
 			<h3>Vet Information</h3>
 			<label>First Name</label>
-				<input type="text" name="vfirstName"> <br>
+				<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters 1 to 20!" name="vfirstName"> <br>
 			<label>Last Name</label>
-				<input type="text" name="vlastName"> <br>
+				<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters 1 to 20!" name="vlastName"> <br>
 			<label>Phone</label>
-				<input type="text" name="vphone"> <br>
+				<input type="text" pattern = "[0-9- ]{12,13}" title = "enter numbers in this format ###-###-#### !" name="vphone"> <br>
 			<h3>Vet Office Location</h3>
 			<label>Street Address</label>
-				<input type="text" name="vstreet"> <br>
+				<input type="text" pattern = "[a-zA-Z0-9 ]{6,30}" title = "enter letters 6 to 20!" name="vstreet"> <br>
 			<label>City</label>
-				<input type="text" name="vcity"> <br>
+				<input type="text" pattern = "[a-zA-Z ]{3,30}" title = "enter letters 3 to 30!" name="vcity"> <br>
 			<label>State</label>
-				<input type="text" name="vstate"> <br>
+				<input type="text" pattern = "[a-zA-Z]{2}" title = "enter 2 letters !" name="vstate"> <br>
 			<label>Zip Code</label>
-				<input type="text" name="vzip"> <br>
+				<input type="text" pattern = "[0-9]{6}" title = "enter 6 numbers" name="vzip"> <br>
 				
 			<h3>Farrier Information</h3>
 			<label>First Name</label>
-				<input type="text" name="ffirstName"> <br>
+				<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters 1 to 20!" name="ffirstName"> <br>
 			<label>Last Name</label>
-				<input type="text" name="flastName"> <br>
+				<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters 1 to 20!" name="flastName"> <br>
 			<label>Phone</label>
-				<input type="text" name="fphone"> <br>
+				<input type="text" pattern = "[0-9- ]{12,13}" title = "enter numbers in this format ###-###-#### !" name="fphone"> <br>
 			<h3>Farrier Mailing Address</h3>
 			<label>Street Address</label> <br>
-				<input type="text" name="fstreet"> <br>
+				<input type="text" pattern = "[a-zA-Z0-9 ]{6,30}" title = "enter letters 6 to 20!" name="fstreet"> <br>
 			<label>City</label> 
-				<input type="text" name="fcity"> <br>
+				<input type="text" pattern = "[a-zA-Z ]{3,30}" title = "enter letters 3 to 30!" name="fcity"> <br>
 			<label>State</label>
-				<input type="text" name="fstate"> <br>
+				<input type="text" pattern = "[a-zA-Z]{2}" title = "enter 2 letters !" name="fstate"> <br>
 			<label>Zip Code</label>
-				<input type="text" name="fzip"> <br>
+				<input type="text" pattern = "[0-9]{6}" title = "enter 6 numbers" name="fzip"> <br>
 				
 			<h3>Training Program</h3>
 			<label>Number of Days Per Week</label>
-				<input type="text" name="dayPW"> <br>
+				<input type="text" pattern = "[0-9]{1,7}" title = "enter a number 1 to 7" name="dayPW"> <br>
 			<label>Disciplines (Check all that apply)</label> <br>
 				<input type="checkbox" name="English" value="1">English
 				<input type="checkbox" name="Western" value="1">Western

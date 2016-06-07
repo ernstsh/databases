@@ -39,7 +39,7 @@ include("_header.php");
 			<br>
 			
 			<label>Note Type</label>
-					<select id="selection" name="Note">
+					<select id="selection" name="Note" required>
 						<option value = "TrainingNote"> Training Note </option>
 						<option value = "VetNote"> Vet </option>
 						<option value = "FarrierNote"> Farrier </option>
@@ -47,25 +47,25 @@ include("_header.php");
 			
 			<div id="vetOP">
 				<label>Vet First Name</label>
-					<input type="text" name="vfirstName">
+					<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters and must be 1 to 20 character long !" name="vfirstName">
 				<br>	
 				<label>Vet Last Name</label>
-					<input type="text" name="vlastName">
+					<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters and must be 1 to 20 character long !" name="vlastName">
 				<br>
 				<label>Phone</label>
-					<input type="text" name="vphone">
+					<input type="text" pattern = "[0-9- ]{12,13}" title = "enter numbers in this format ###-###-#### !" name="vphone">
 				<br>
 			</div>
 			
 			<div id="farOP">
 				<label>Farrier First Name</label>
-					<input type="text" name="ffirstName">
+					<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters and must be 1 to 20 character long !" name="ffirstName">
 				<br>	
 				<label>Farrier Last Name</label>
-					<input type="text" name="flastName">
+					<input type="text" pattern = "[a-zA-Z ]{1,20}" title = "enter letters and must be 1 to 20 character long !" name="flastName">
 				<br>
 				<label>Phone</label>
-					<input type="text" name="fphone">
+					<input type="text" pattern = "[0-9- ]{12,13}" title = "enter numbers in this format ###-###-#### !" name="fphone" >
 				<br>
 			</div>
 			
